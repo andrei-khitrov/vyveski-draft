@@ -1,0 +1,24 @@
+{
+ "name": "VELES — вывески и наружная реклама",
+ "short_name": "VELES",
+ "description": "Объёмные световые буквы, лайтбоксы, крышные установки. Производство в Москве.",
+ "lang": "ru",
+ "start_url": "/vyveski-draft/",
+ "scope": "/vyveski-draft/",
+ "display": "standalone",
+ "background_color": "#F6F5F1",
+ "theme_color": "#008574",
+ "icons": [
+  {
+   "src": "/vyveski-draft/assets/img/brand/touch-icon.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  },
+  {
+   "src": "/vyveski-draft/assets/img/brand/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

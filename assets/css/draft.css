@@ -1,0 +1,46 @@
+/* Черновая сборка: только то, чего нет в основном наборе стилей.
+   Подключается единственной страницей превью (DRAFT=1), на боевой сайт не попадает. */
+
+/* Метка «черновик» в середине шапки — на месте, где в полной версии меню */
+.draft-flag {
+  justify-self: center;
+  color: var(--muted);
+  padding: .5em .9em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  white-space: nowrap;
+}
+
+/* Подпись вместо ссылки «вся продукция»: страницы каталога в черновике нет */
+.draft-note {
+  color: var(--muted);
+  justify-self: end;
+  align-self: end;
+  margin-bottom: .5em;
+  white-space: nowrap;
+}
+
+/* Раздел «что дальше» — состав полной версии, спокойным списком */
+.draft-scope__lead { color: var(--ink-2); max-width: 58ch; }
+.draft-scope__list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.draft-scope__item {
+  display: grid;
+  grid-template-columns: minmax(120px, 160px) 1fr;
+  gap: var(--s-4);
+  align-items: baseline;
+  padding-block: var(--s-3);
+  border-bottom: 1px solid var(--line);
+}
+.draft-scope__n { color: var(--accent); }
+.draft-scope__t { font-size: var(--fs-4); letter-spacing: var(--ls-display); text-wrap: pretty; }
+
+/* Подвал черновика: два блока вместо карты сайта */
+.footer__top--draft { grid-template-columns: 1fr auto; }
+
+@media (max-width: 900px) {
+  .draft-flag { display: none; }
+  .draft-note { justify-self: start; margin-bottom: 0; }
+  .draft-scope__item { grid-template-columns: 1fr; gap: var(--s-1); }
+  .footer__top--draft { grid-template-columns: 1fr; }
+}

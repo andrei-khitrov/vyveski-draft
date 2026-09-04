@@ -1,0 +1,94 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   VELES — дизайн-система. Единственный источник значений.
+   Палитра — из логотипа презентации (#008574). Светлая база + тёмный шоурум.
+   Движение — одно семейство easing на весь сайт (cubic-bezier(.32,.72,0,1),
+   пересажено у beetogreen.com), три длительности.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Цвет ── */
+  --bg: #F6F5F1;            /* тёплый off-white, основной фон */
+  --bg-2: #EEEDE8;          /* вторая поверхность */
+  --surface: #FFFFFF;
+  --ink: #121514;           /* текст */
+  --ink-2: #3A3F3D;
+  --muted: #6E7573;
+  --line: rgba(18, 21, 20, .12);
+  --line-strong: rgba(18, 21, 20, .28);
+  --accent: #008574;        /* teal бренда */
+  --accent-deep: #0B6E63;   /* ховер / текст-акцент */
+  --accent-tint: #DFEFED;
+  --accent-tint-2: #EEF6F5;
+  --on-accent: #F6F5F1;
+  --dark: #0F1211;          /* шоурум */
+  --dark-2: #171C1A;
+  --dark-line: rgba(246, 245, 241, .14);
+  --dark-muted: rgba(246, 245, 241, .62);
+  --glow: #FFF4DC;          /* свечение букв: тёплый белый */
+  --glow-rgb: 255, 244, 220;
+  --accent-rgb: 0, 133, 116;
+  --error: #B8402A;
+  --success: #0B6E63;
+
+  /* ── Типографика ── */
+  --font-sans: 'VelesSans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-mono: 'VelesMono', 'SF Mono', Menlo, Consolas, monospace;
+  --fs-hero: clamp(2.9rem, 8.4vw, 8.75rem);     /* h1 главной */
+  --fs-1: clamp(2.75rem, 6.4vw, 6.5rem);        /* h1 страниц */
+  --fs-2: clamp(2rem, 4.2vw, 4rem);             /* h2 */
+  --fs-3: clamp(1.5rem, 2.4vw, 2.25rem);        /* h3 */
+  --fs-4: clamp(1.125rem, 1.4vw, 1.375rem);     /* лид */
+  --fs-5: 1rem;                                 /* текст */
+  --fs-6: .875rem;
+  --fs-7: .75rem;                               /* моно-подписи */
+  --lh-tight: .92;
+  --lh-snug: 1.05;
+  --lh-body: 1.55;
+  --ls-tight: -.035em;
+  --ls-display: -.02em;
+  --ls-mono: .12em;
+
+  /* ── Отступы ── */
+  --header-h: 76px;
+  --s-1: 8px; --s-2: 16px; --s-3: 24px; --s-4: 40px; --s-5: 64px; --s-6: 96px; --s-7: 140px; --s-8: 200px;
+  --section: clamp(96px, 11vw, 176px);
+  --gutter: clamp(20px, 4vw, 64px);
+  --container: 1440px;
+  --content: 72ch;
+
+  /* ── Форма ── */
+  --r-s: 4px; --r-m: 14px; --r-l: 28px; --r-pill: 999px;
+  --shadow-soft: 0 24px 80px rgba(18, 21, 20, .10);
+  --shadow-glow: 0 0 40px rgba(var(--glow-rgb), .35), 0 0 120px rgba(var(--glow-rgb), .15);
+
+  /* ── Движение ── */
+  --ease: cubic-bezier(.32, .72, 0, 1);
+  --d-fast: .3s; --d-med: .8s; --d-slow: 1.2s;
+
+  /* ── Слои ── */
+  --z-header: 100; --z-menu: 110; --z-cursor: 200; --z-transition: 300; --z-preloader: 400;
+}
+
+/* Светлая карточка внутри тёмной секции: роли возвращаются к базовым */
+.is-light {
+  --bg: #F6F5F1; --bg-2: #EEEDE8; --surface: #FFFFFF;
+  --ink: #121514; --ink-2: #3A3F3D; --muted: #6E7573;
+  --line: rgba(18, 21, 20, .12); --line-strong: rgba(18, 21, 20, .28);
+  --accent-tint: #DFEFED; --accent-tint-2: #EEF6F5;
+  color: var(--ink); background: var(--bg);
+}
+
+/* Тёмная секция-шоурум: те же роли, переназначенные */
+.is-dark, .showroom {
+  --bg: var(--dark);
+  --bg-2: var(--dark-2);
+  --surface: var(--dark-2);
+  --ink: #F6F5F1;
+  --ink-2: rgba(246, 245, 241, .82);
+  --muted: var(--dark-muted);
+  --line: var(--dark-line);
+  --line-strong: rgba(246, 245, 241, .32);
+  --accent-tint: rgba(0, 133, 116, .18);
+  --accent-tint-2: rgba(0, 133, 116, .10);
+  color: var(--ink);
+  background: var(--bg);
+}
