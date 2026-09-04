@@ -8,7 +8,10 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const isMobile = matchMedia('(max-width: 767px)').matches;
+// Узкий экран: геометрия и свет те же (иначе кольцо логотипа становится гранёным),
+// экономим только на плотности пикселей; орбитальное управление выключено — OrbitControls
+// ставит канвасу touch-action: none, и страница перестала бы скроллиться пальцем.
+const compact = matchMedia('(max-width: 900px)').matches;
 const TEAL = 0x008574, TEAL_DEEP = 0x0b6e63;
 
 /* Разбор SVG-path логотипа (M L C H V Z) → THREE.ShapePath */
@@ -28,7 +31,7 @@ function parsePathD(d, sp) {
 async function initLogo(el) {
   const canvas = el.querySelector('canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, isMobile ? 1.5 : 2));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, compact ? 1.75 : 2));
   renderer.setClearAlpha(0);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.95;
@@ -61,11 +64,17 @@ async function initLogo(el) {
   camera.lookAt(0, 0, 0);
   group.rotation.x = 0.1;
 
-  const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = true; controls.dampingFactor = 0.07;
-  controls.enablePan = false; controls.enableZoom = false;
-  controls.minDistance = dist * 0.6; controls.maxDistance = dist * 1.8;
-  controls.minPolarAngle = Math.PI * 0.3; controls.maxPolarAngle = Math.PI * 0.66;
+  // На узких экранах логотип просто вращается сам: палец должен листать страницу, а не сцену
+  let controls = null;
+  if (compact) {
+    canvas.style.touchAction = 'pan-y';
+  } else {
+    controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true; controls.dampingFactor = 0.07;
+    controls.enablePan = false; controls.enableZoom = false;
+    controls.minDistance = dist * 0.6; controls.maxDistance = dist * 1.8;
+    controls.minPolarAngle = Math.PI * 0.3; controls.maxPolarAngle = Math.PI * 0.66;
+  }
 
   const resize = () => {
     const w = el.clientWidth || 600, h = el.clientHeight || 400;
@@ -80,7 +89,7 @@ async function initLogo(el) {
     if (!visible) return;
     const dt = Math.min(clock.getDelta(), 0.05);
     if (!reduce) group.rotation.y += dt * 0.22; // полный оборот примерно за 28 секунд
-    controls.update();
+    if (controls) controls.update();
     renderer.render(scene, camera);
     requestAnimationFrame(loop);
   };
@@ -88,11 +97,10 @@ async function initLogo(el) {
   el.classList.add('is-ready');
 }
 
-/* Сцену грузим только там, где она уместна и по карману:
-   не на мобильных, не при экономии трафика, не на слабых устройствах,
-   не при просьбе уменьшить движение. И только после полной загрузки страницы. */
+/* Сцену грузим везде, где она по карману: телефон тоже её тянет, но не при экономии
+   трафика, не на слабых устройствах и не при просьбе уменьшить движение.
+   И только после полной загрузки страницы. */
 const allowed = () => {
-  if (matchMedia('(max-width: 900px)').matches) return false;
   if (reduce) return false;
   const c = navigator.connection;
   if (c && (c.saveData || /2g/.test(c.effectiveType || ''))) return false;

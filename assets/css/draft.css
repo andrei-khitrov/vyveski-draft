@@ -1,46 +1,85 @@
-/* Черновая сборка: только то, чего нет в основном наборе стилей.
-   Подключается единственной страницей превью (DRAFT=1), на боевой сайт не попадает. */
+/* Черновая сборка: стили, которых нет в основном наборе. Подключается только при DRAFT=1,
+   на боевой сайт не попадает. Всё остальное оформление — общее с рабочей версией. */
 
-/* Метка «черновик» в середине шапки — на месте, где в полной версии меню */
+/* Метка черновика: неброская плашка в углу, не трогает шапку и не мешает контенту */
 .draft-flag {
-  justify-self: center;
+  position: fixed;
+  left: var(--gutter);
+  bottom: var(--s-3);
+  z-index: 40;
   color: var(--muted);
-  padding: .5em .9em;
+  padding: .55em 1em;
   border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
   white-space: nowrap;
 }
 
-/* Подпись вместо ссылки «вся продукция»: страницы каталога в черновике нет */
-.draft-note {
-  color: var(--muted);
-  justify-self: end;
-  align-self: end;
-  margin-bottom: .5em;
-  white-space: nowrap;
+/* ── Заглушка страницы: слева «скелет» вёрстки, справа — что здесь появится ── */
+.hero--stub { padding-bottom: var(--s-4); }
+.hero--stub .lead { max-width: 52ch; }
+.stub { padding-block: var(--s-5) var(--section); }
+.stub__inner { display: grid; grid-template-columns: 7fr 5fr; gap: var(--s-6); align-items: start; }
+.stub__skeleton { display: grid; gap: var(--s-3); }
+.stub__bar, .stub__block, .stub__tile {
+  display: block;
+  background: rgba(18, 21, 20, .055);
+  border-radius: var(--r-s);
+  animation: stub-pulse 2.6s var(--ease) infinite;
+  animation-delay: calc(var(--i, 0) * .14s);
+}
+.stub__bar { height: 14px; width: var(--w, 100%); border-radius: var(--r-pill); }
+.stub__block { height: clamp(180px, 22vw, 280px); border-radius: var(--r-m); margin-block: var(--s-2); }
+.stub__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); margin-bottom: var(--s-2); }
+.stub__tile { height: clamp(90px, 10vw, 130px); border-radius: var(--r-m); }
+@keyframes stub-pulse {
+  0%, 100% { background: rgba(18, 21, 20, .055); }
+  50% { background: rgba(18, 21, 20, .095); }
 }
 
-/* Раздел «что дальше» — состав полной версии, спокойным списком */
-.draft-scope__lead { color: var(--ink-2); max-width: 58ch; }
-.draft-scope__list { display: grid; gap: 0; border-top: 1px solid var(--line); }
-.draft-scope__item {
+.stub__note { position: sticky; top: calc(var(--header-h) + var(--s-4)); display: grid; gap: var(--s-3); }
+.stub__label { color: var(--muted); }
+.stub__list { display: grid; border-top: 1px solid var(--line); }
+.stub__list li {
+  padding-block: .8em;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  display: flex;
+  gap: .7em;
+}
+.stub__list li::before { content: '✶'; color: var(--accent); }
+.stub__hint { color: var(--muted); font-size: var(--fs-6); max-width: 34ch; }
+
+/* ── Главная черновика: раздел «что дальше» ── */
+.draft-scope__lead { color: var(--ink-2); max-width: 62ch; }
+.draft-scope__list { display: grid; border-top: 1px solid var(--line); }
+.draft-scope__link {
   display: grid;
-  grid-template-columns: minmax(120px, 160px) 1fr;
+  grid-template-columns: minmax(120px, 160px) 1fr auto;
   gap: var(--s-4);
   align-items: baseline;
   padding-block: var(--s-3);
   border-bottom: 1px solid var(--line);
+  transition: color var(--d-fast) var(--ease), padding-left var(--d-fast) var(--ease);
 }
+.draft-scope__link:hover { color: var(--accent); padding-left: var(--s-2); }
 .draft-scope__n { color: var(--accent); }
 .draft-scope__t { font-size: var(--fs-4); letter-spacing: var(--ls-display); text-wrap: pretty; }
+.draft-scope__arrow { align-self: center; opacity: .35; transition: opacity var(--d-fast) var(--ease); }
+.draft-scope__link:hover .draft-scope__arrow { opacity: 1; }
 
-/* Подвал черновика: два блока вместо карты сайта */
-.footer__top--draft { grid-template-columns: 1fr auto; }
+@media (prefers-reduced-motion: reduce) {
+  .stub__bar, .stub__block, .stub__tile { animation: none; }
+}
 
 @media (max-width: 900px) {
-  .draft-flag { display: none; }
-  .draft-note { justify-self: start; margin-bottom: 0; }
-  .draft-scope__item { grid-template-columns: 1fr; gap: var(--s-1); }
-  .footer__top--draft { grid-template-columns: 1fr; }
+  .draft-flag { display: none; }              /* внизу экрана уже стоит панель звонка */
+  .stub__inner { grid-template-columns: 1fr; gap: var(--s-5); }
+  .stub__note { position: static; }
+  .draft-scope__link { grid-template-columns: 1fr auto; gap: var(--s-1) var(--s-3); }
+  .draft-scope__n { grid-column: 1 / -1; }
 }
+
+.stub__gap { height: var(--s-2); }

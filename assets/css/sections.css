@@ -267,6 +267,8 @@ html.is-arriving .main { opacity: .65; }
 .logo--stage { width: min(62%, 380px); height: auto; color: var(--accent); }
 .viewer.is-ready .viewer__fallback { display: none; }
 .viewer.is-static .viewer__canvas, .viewer.is-static .viewer__hint, .viewer.is-failed .viewer__hint { display: none; }
+/* На тач-экранах сцена крутится сама, тянуть нечего — подсказка только для мыши */
+@media (hover: none), (max-width: 900px) { .viewer__hint { display: none; } .viewer__canvas { cursor: default; } }
 .viewer__hint { position: absolute; right: var(--s-3); bottom: var(--s-3); color: var(--muted); pointer-events: none; }
 
 /* ── Витрина продукта: рендеры из презентации клиента ── */
@@ -698,8 +700,8 @@ html.js [data-stagger].in > * { opacity: 1; transform: none; transition: opacity
   .h1, .hero__title, .h2, .mats__name, .rows__title, .scard__title { hyphens: auto; overflow-wrap: anywhere; }
   :root { --fs-1: clamp(2.4rem, 11vw, 6.5rem); }
   .hero__facts { grid-template-columns: repeat(2, 1fr); }
-  .hero__stage { min-height: 400px; border-radius: var(--r-m); }
-  .viewer { min-height: 320px; }
+  .hero__stage { min-height: 440px; border-radius: var(--r-m); }
+  .viewer { min-height: 380px; }   /* на телефоне сцена настоящая, а не плоский логотип — ей нужен размер */
   .showcase__frame { min-height: 300px; padding: var(--s-3); }
   .showcase__img { width: min(220px, 70%); }
   .pgrid, .pgrid--full { grid-template-columns: 1fr; }

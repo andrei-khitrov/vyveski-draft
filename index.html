@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VELES — черновик сайта</title>
-<meta name="description" content="Черновая версия сайта VELES: показывает оформление будущего сайта — первый экран, ритм секций и форму заявки.">
+<meta name="description" content="Черновая версия сайта VELES: показывает оформление будущего сайта — первый экран, ритм секций, структуру и форму заявки.">
 <link rel="canonical" href="https://andrei-khitrov.github.io/vyveski-draft/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="VELES"><meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="VELES — черновик сайта"><meta property="og:description" content="Черновая версия сайта VELES: показывает оформление будущего сайта — первый экран, ритм секций и форму заявки.">
+<meta property="og:title" content="VELES — черновик сайта"><meta property="og:description" content="Черновая версия сайта VELES: показывает оформление будущего сайта — первый экран, ритм секций, структуру и форму заявки.">
 <meta property="og:url" content="https://andrei-khitrov.github.io/vyveski-draft/"><meta property="og:image" content="https://andrei-khitrov.github.io/vyveski-draft/assets/img/brand/og-cover.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,23 +35,108 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
 <div class="curtain" data-curtain aria-hidden="true"><span class="curtain__edge" data-curtain-edge></span></div>
 <div class="cursor" data-cursor aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label"></span></div>
 <div class="noise" aria-hidden="true"></div>
+<span class="draft-flag mono" title="Черновая версия: оформление настоящее, содержание страниц ещё не наполнено">черновик макета</span>
 <div id="top"></div>
 
-<header class="header header--draft" data-header>
+<header class="header" data-header>
   <div class="header__bar">
-    <a href="#top" class="header__logo" aria-label="VELES — наверх" data-theme="light"><svg class="logo logo--header" viewBox="0 0 226.33 122.98" aria-hidden="true"><use href="#logo-full"/></svg></a>
-    <span class="draft-flag mono" title="Черновая версия: показывает оформление, не содержание">черновик · превью оформления</span>
+    <a href="/vyveski-draft/" class="header__logo" aria-label="VELES — на главную" data-theme="light"><svg class="logo logo--header" viewBox="0 0 226.33 122.98" aria-hidden="true"><use href="#logo-full"/></svg></a>
+    <nav class="nav" aria-label="Основное меню">
+      <ul class="nav__list">
+        <li class="nav__item nav__item--mega" data-mega="products">
+          <a href="/vyveski-draft/produkciya/" class="nav__link " aria-haspopup="true" aria-expanded="false">Продукция</a>
+          <div class="mega" id="mega-products" role="region" aria-label="Продукция">
+            <div class="mega__inner container">
+              <div class="mega__aside">
+                <p class="eyebrow"><span class="eyebrow__n">01</span><span class="eyebrow__sep">/</span><span>Продукция</span></p>
+                <p class="mega__lead">Семь семейств вывесок: от букв за сантиметр до крышных установок по индивидуальной смете.</p>
+                <a href="/vyveski-draft/produkciya/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Все семейства</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a>
+                <a href="/vyveski-draft/kalkulyator/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Рассчитать стоимость</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a>
+              </div>
+              <ul class="mega__grid">
+                <li><a href="/vyveski-draft/produkciya/obemnye-svetovye-bukvy/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/svet-licevaya-podsvetka.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">01</span><span class="mega__name">Объёмные световые буквы</span><span class="mega__price">от 68 ₽/см</span></a></li><li><a href="/vyveski-draft/produkciya/nesvetovye-bukvy/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/nesvet-obemnye-pvh.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">02</span><span class="mega__name">Несветовые буквы и вывески</span><span class="mega__price">от 25 ₽/см</span></a></li><li><a href="/vyveski-draft/produkciya/svetovye-koroba/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/korob-figurny.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">03</span><span class="mega__name">Световые короба (лайтбоксы)</span><span class="mega__price">от 8 000 ₽/м²</span></a></li><li><a href="/vyveski-draft/produkciya/bukvy-iz-nerzhaveyushchej-stali/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/nerzh-licevaya.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">04</span><span class="mega__name">Вывески из нержавеющей стали</span><span class="mega__price">от 30 ₽/см</span></a></li><li><a href="/vyveski-draft/produkciya/kompozitnye-koroba-s-inkrustaciej/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/kompozit-bez-inkrustacii.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">05</span><span class="mega__name">Композитные короба с инкрустацией</span><span class="mega__price">от 9 000 ₽/м²</span></a></li><li><a href="/vyveski-draft/produkciya/kryshnye-ustanovki/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/kryshnaya-ustanovka-render.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">06</span><span class="mega__name">Крышные установки</span><span class="mega__price">по смете</span></a></li><li><a href="/vyveski-draft/produkciya/stely-i-pilony/" class="mega__card" data-theme="light"><span class="mega__thumb"><img src="/vyveski-draft/assets/img/pdf/pilon-render.png" alt="" width="170" height="170" loading="lazy"></span><span class="mega__n">07</span><span class="mega__name">Рекламные стелы и пилоны</span><span class="mega__price">по смете</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--mega" data-mega="services">
+          <a href="/vyveski-draft/uslugi/" class="nav__link " aria-haspopup="true" aria-expanded="false">Услуги</a>
+          <div class="mega" id="mega-services" role="region" aria-label="Услуги">
+            <div class="mega__inner container">
+              <div class="mega__aside">
+                <p class="eyebrow"><span class="eyebrow__n">02</span><span class="eyebrow__sep">/</span><span>Услуги</span></p>
+                <p class="mega__lead">Всё под ключ в одном месте: от замера и дизайна до согласования, монтажа и сервиса.</p>
+                <a href="/vyveski-draft/uslugi/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Все услуги</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a>
+              </div>
+              <ul class="mega__list">
+                <li><a href="/vyveski-draft/uslugi/naruzhnaya-reklama/" class="mega__row" data-theme="light"><span class="mega__n">01</span><span class="mega__name">Наружная реклама</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/interernaya-reklama/" class="mega__row" data-theme="light"><span class="mega__n">02</span><span class="mega__name">Интерьерная реклама</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/shirokoformatnaya-pechat/" class="mega__row" data-theme="light"><span class="mega__n">03</span><span class="mega__name">Широкоформатная печать</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/soglasovanie-reklamy/" class="mega__row" data-theme="light"><span class="mega__n">04</span><span class="mega__name">Согласование рекламы</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/razrabotka-koncepcij/" class="mega__row" data-theme="light"><span class="mega__n">05</span><span class="mega__name">Разработка концепций</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/konsalting-obektov/" class="mega__row" data-theme="light"><span class="mega__n">06</span><span class="mega__name">Консалтинг объектов</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/obsluzhivanie-vyvesok/" class="mega__row" data-theme="light"><span class="mega__n">07</span><span class="mega__name">Обслуживание вывесок</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/proektirovanie/" class="mega__row" data-theme="light"><span class="mega__n">08</span><span class="mega__name">Проектирование</span><span class="mega__arrow" aria-hidden="true">→</span></a></li><li><a href="/vyveski-draft/uslugi/montazh-reklamy/" class="mega__row" data-theme="light"><span class="mega__n">09</span><span class="mega__name">Монтаж рекламы</span><span class="mega__arrow" aria-hidden="true">→</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item"><a href="/vyveski-draft/o-kompanii/" class="nav__link ">О компании</a></li>
+        <li class="nav__item"><a href="/vyveski-draft/raboty/" class="nav__link ">Работы</a></li>
+        <li class="nav__item"><a href="/vyveski-draft/kalkulyator/" class="nav__link ">Калькулятор</a></li>
+        <li class="nav__item"><a href="/vyveski-draft/kontakty/" class="nav__link ">Контакты</a></li>
+      </ul>
+    </nav>
     <div class="header__actions">
       <a href="tel:+74957895098" class="header__phone mono">+7 495 789 50 98</a>
       <a href="tel:+74957895098" class="header__call" aria-label="Позвонить: +7 495 789 50 98"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
-      <a href="#zayavka" class="btn btn--primary btn--sm magnetic" ><span class="btn__label">Бесплатный замер</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a href="/vyveski-draft/kontakty/#zayavka" class="btn btn--primary btn--sm magnetic" ><span class="btn__label">Бесплатный замер</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
   </div>
   <div class="header__progress" aria-hidden="true"><span data-progress></span></div>
 </header>
+<dialog class="menu" id="menu" data-lenis-prevent aria-label="Меню">
+  <div class="menu__head">
+    <a href="/vyveski-draft/" class="header__logo" aria-label="VELES — на главную"><svg class="logo logo--header" viewBox="0 0 226.33 122.98" aria-hidden="true"><use href="#logo-full"/></svg></a>
+    <button class="menu__close" type="button" aria-label="Закрыть меню"><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+  </div>
+  <nav class="menu__scroll" aria-label="Мобильное меню">
+    <div class="mgroup" data-mgroup>
+      <button class="mrow mrow--toggle" type="button" aria-expanded="false" aria-controls="mg-produkciya">
+        <span class="mrow__n mono">01</span><span class="mrow__title">Продукция</span><span class="mrow__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="mgroup__body" id="mg-produkciya"><div>
+        <ul class="msub">
+          <li><a href="/vyveski-draft/produkciya/obemnye-svetovye-bukvy/" class="msub__link " data-theme="light"><span class="msub__name">Световые буквы</span><span class="msub__note mono">от 68 ₽/см</span></a></li><li><a href="/vyveski-draft/produkciya/nesvetovye-bukvy/" class="msub__link " data-theme="light"><span class="msub__name">Несветовые буквы</span><span class="msub__note mono">от 25 ₽/см</span></a></li><li><a href="/vyveski-draft/produkciya/svetovye-koroba/" class="msub__link " data-theme="light"><span class="msub__name">Световые короба</span><span class="msub__note mono">от 8 000 ₽/м²</span></a></li><li><a href="/vyveski-draft/produkciya/bukvy-iz-nerzhaveyushchej-stali/" class="msub__link " data-theme="light"><span class="msub__name">Нержавеющая сталь</span><span class="msub__note mono">от 30 ₽/см</span></a></li><li><a href="/vyveski-draft/produkciya/kompozitnye-koroba-s-inkrustaciej/" class="msub__link " data-theme="light"><span class="msub__name">Короба с инкрустацией</span><span class="msub__note mono">от 9 000 ₽/м²</span></a></li><li><a href="/vyveski-draft/produkciya/kryshnye-ustanovki/" class="msub__link " data-theme="light"><span class="msub__name">Крышные установки</span><span class="msub__note mono">смета</span></a></li><li><a href="/vyveski-draft/produkciya/stely-i-pilony/" class="msub__link " data-theme="light"><span class="msub__name">Стелы и пилоны</span><span class="msub__note mono">смета</span></a></li>
+          <li><a href="/vyveski-draft/produkciya/" class="msub__link msub__link--all" data-theme="light"><span class="msub__name">Все семейства</span><span class="msub__note mono">→</span></a></li>
+        </ul>
+      </div></div>
+    </div>
+    <div class="mgroup" data-mgroup>
+      <button class="mrow mrow--toggle" type="button" aria-expanded="false" aria-controls="mg-uslugi">
+        <span class="mrow__n mono">02</span><span class="mrow__title">Услуги</span><span class="mrow__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="mgroup__body" id="mg-uslugi"><div>
+        <ul class="msub">
+          <li><a href="/vyveski-draft/uslugi/naruzhnaya-reklama/" class="msub__link " data-theme="light"><span class="msub__name">Наружная реклама</span><span class="msub__note mono">01</span></a></li><li><a href="/vyveski-draft/uslugi/interernaya-reklama/" class="msub__link " data-theme="light"><span class="msub__name">Интерьерная реклама</span><span class="msub__note mono">02</span></a></li><li><a href="/vyveski-draft/uslugi/shirokoformatnaya-pechat/" class="msub__link " data-theme="light"><span class="msub__name">Широкоформатная печать</span><span class="msub__note mono">03</span></a></li><li><a href="/vyveski-draft/uslugi/soglasovanie-reklamy/" class="msub__link " data-theme="light"><span class="msub__name">Согласование рекламы</span><span class="msub__note mono">04</span></a></li><li><a href="/vyveski-draft/uslugi/razrabotka-koncepcij/" class="msub__link " data-theme="light"><span class="msub__name">Разработка концепций</span><span class="msub__note mono">05</span></a></li><li><a href="/vyveski-draft/uslugi/konsalting-obektov/" class="msub__link " data-theme="light"><span class="msub__name">Консалтинг объектов</span><span class="msub__note mono">06</span></a></li><li><a href="/vyveski-draft/uslugi/obsluzhivanie-vyvesok/" class="msub__link " data-theme="light"><span class="msub__name">Обслуживание вывесок</span><span class="msub__note mono">07</span></a></li><li><a href="/vyveski-draft/uslugi/proektirovanie/" class="msub__link " data-theme="light"><span class="msub__name">Проектирование</span><span class="msub__note mono">08</span></a></li><li><a href="/vyveski-draft/uslugi/montazh-reklamy/" class="msub__link " data-theme="light"><span class="msub__name">Монтаж рекламы</span><span class="msub__note mono">09</span></a></li>
+          <li><a href="/vyveski-draft/uslugi/" class="msub__link msub__link--all" data-theme="light"><span class="msub__name">Все услуги</span><span class="msub__note mono">→</span></a></li>
+        </ul>
+      </div></div>
+    </div>
+    <div class="mgroup" data-mgroup>
+      <button class="mrow mrow--toggle" type="button" aria-expanded="false" aria-controls="mg-company">
+        <span class="mrow__n mono">03</span><span class="mrow__title">О компании</span><span class="mrow__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="mgroup__body" id="mg-company"><div>
+        <ul class="msub">
+          <li><a href="/vyveski-draft/o-kompanii/" class="msub__link " data-theme="light"><span class="msub__name">Кто мы</span><span class="msub__note mono">→</span></a></li><li><a href="/vyveski-draft/pochemu-my/" class="msub__link " data-theme="light"><span class="msub__name">Почему мы</span><span class="msub__note mono">→</span></a></li><li><a href="/vyveski-draft/zachem-vyveska/" class="msub__link " data-theme="light"><span class="msub__name">Зачем вывеска</span><span class="msub__note mono">→</span></a></li><li><a href="/vyveski-draft/materialy/" class="msub__link " data-theme="light"><span class="msub__name">Материалы</span><span class="msub__note mono">→</span></a></li>
+        </ul>
+      </div></div>
+    </div>
+    <a class="mrow mrow--link " href="/vyveski-draft/raboty/" data-theme="light"><span class="mrow__n mono">04</span><span class="mrow__title">Работы</span><span class="mrow__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><a class="mrow mrow--link " href="/vyveski-draft/kalkulyator/" data-theme="light"><span class="mrow__n mono">05</span><span class="mrow__title">Калькулятор</span><span class="mrow__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a><a class="mrow mrow--link " href="/vyveski-draft/kontakty/" data-theme="light"><span class="mrow__n mono">06</span><span class="mrow__title">Контакты</span><span class="mrow__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+  </nav>
+  <div class="menu__foot">
+    <a href="tel:+74957895098" class="menu__phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>+7 495 789 50 98</span></a>
+    <a href="/vyveski-draft/kontakty/#zayavka" class="btn btn--primary btn--full magnetic" ><span class="btn__label">Заказать замер</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+  </div>
+</dialog>
 <div class="callbar" aria-label="Быстрая связь">
   <a href="tel:+74957895098" class="callbar__call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Позвонить</span></a>
-  <a href="#zayavka" class="callbar__lead" data-theme="dark">Оставить заявку</a>
+  <a href="/vyveski-draft/kontakty/#zayavka" class="callbar__lead" data-theme="dark">Оставить заявку</a>
 </div>
 <main id="main" class="main">
 
@@ -61,7 +146,7 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
       <p class="eyebrow eyebrow--plain">Москва · рекламное объединение</p>
       <h1 class="hero__title split" data-split="words">Яркая вывеска — ваш лучший <em>продавец</em></h1>
       <p class="hero__lead reveal">Работает круглосуточно и без выходных. Объёмные световые буквы, короба и крышные установки: нарисуем, согласуем по 902-ПП и повесим за 4 дня. От 68 ₽ за сантиметр высоты, без предоплаты, гарантия 2 года.</p>
-      <div class="hero__cta reveal"><a href="#zayavka" class="btn btn--primary magnetic" ><span class="btn__label">Бесплатный замер</span><span class="btn__arrow" aria-hidden="true">→</span></a><a href="#raschet" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Рассчитать стоимость</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a></div>
+      <div class="hero__cta reveal"><a href="/vyveski-draft/kontakty/#zayavka" class="btn btn--primary magnetic" ><span class="btn__label">Бесплатный замер</span><span class="btn__arrow" aria-hidden="true">→</span></a><a href="/vyveski-draft/kalkulyator/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Рассчитать стоимость</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a></div>
       <dl class="hero__facts mono reveal">
         <div><dt data-count="3569">0</dt><dd>дизайнов</dd></div><div><dt data-count="469000">0</dt><dd>световых букв</dd></div><div><dt data-count="3388">0</dt><dd>монтажей</dd></div><div><dt>2</dt><dd>года гарантии</dd></div>
       </dl>
@@ -91,6 +176,7 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
       <p class="eyebrow"><span class="eyebrow__n">01</span><span class="eyebrow__sep">/</span><span>В цифрах</span></p>
       <h2 class="split h2" data-split="lines">Собственное производство в Москве. <em>Свет как материал</em></h2>
       <p class="showroom__lead reveal">Качественные комплектующие, современное оборудование, профессиональная команда увлечённых людей. Мы выбрали лучших европейских и среднеазиатских поставщиков для нашей климатической зоны. Поэтому наша вывеска будет самой яркой и долговечной.</p>
+      <a href="/vyveski-draft/o-kompanii/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">О компании</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a>
     </div>
     <figure class="showroom__photo reveal"><picture><source type="image/webp" srcset="/vyveski-draft/assets/img/photo/production-hall-480.webp 480w, /vyveski-draft/assets/img/photo/production-hall-960.webp 960w" sizes="(max-width: 1023px) 100vw, 40vw"><img src="/vyveski-draft/assets/img/photo/production-hall.jpg" alt="Производственная площадка VELES" width="1536" height="2752" class="" loading="lazy" decoding="async"></picture></figure>
   </div>
@@ -100,29 +186,29 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
   <div class="container section__head section__head--row">
     <p class="eyebrow"><span class="eyebrow__n">02</span><span class="eyebrow__sep">/</span><span>Продукция</span></p>
     <h2 class="split h2" data-split="lines">Семь семейств вывесок. <em>Считаем за сантиметр</em> высоты или за квадратный метр</h2>
-    <p class="draft-note mono">в черновике показаны четыре</p>
+    <a href="/vyveski-draft/produkciya/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Вся продукция</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a>
   </div>
   <div class="strip" data-strip>
     <ul class="strip__track">
-      <li class="strip__item"><a href="#zayavka" class="scard" data-theme="light">
+      <li class="strip__item"><a href="/vyveski-draft/produkciya/obemnye-svetovye-bukvy/" class="scard" data-theme="light">
         <span class="scard__n mono">01 / 07</span>
         <span class="scard__img"><picture><source type="image/webp" srcset="/vyveski-draft/assets/img/pdf/svet-krugly-znak-render.webp 215w" sizes="100vw"><img src="/vyveski-draft/assets/img/pdf/svet-krugly-znak-render.png" alt="Объёмные световые буквы" width="215" height="215" class="" loading="lazy" decoding="async"></picture></span>
         <span class="scard__title">Объёмные световые буквы</span>
         <span class="scard__kicker">Популярный вид рекламы</span>
         <p class="price "><span class="price__from">от</span><span class="price__num">68</span><span class="price__cur">₽</span><span class="price__unit">/ см высоты</span></p>
-        <span class="scard__more link-bracket"><span class="link-bracket__b">[</span><span class="link-bracket__t">Смотреть</span><span class="link-bracket__a">→</span><span class="link-bracket__b">]</span></span></a></li><li class="strip__item"><a href="#zayavka" class="scard" data-theme="light">
+        <span class="scard__more link-bracket"><span class="link-bracket__b">[</span><span class="link-bracket__t">Смотреть</span><span class="link-bracket__a">→</span><span class="link-bracket__b">]</span></span></a></li><li class="strip__item"><a href="/vyveski-draft/produkciya/nesvetovye-bukvy/" class="scard" data-theme="light">
         <span class="scard__n mono">02 / 07</span>
         <span class="scard__img"><picture><source type="image/webp" srcset="/vyveski-draft/assets/img/pdf/nesvet-krugly-znak-render.webp 215w" sizes="100vw"><img src="/vyveski-draft/assets/img/pdf/nesvet-krugly-znak-render.png" alt="Несветовые буквы и вывески" width="215" height="215" class="" loading="lazy" decoding="async"></picture></span>
         <span class="scard__title">Несветовые буквы и вывески</span>
         <span class="scard__kicker">Бюджетный и популярный вид рекламы</span>
         <p class="price "><span class="price__from">от</span><span class="price__num">25</span><span class="price__cur">₽</span><span class="price__unit">/ см высоты</span></p>
-        <span class="scard__more link-bracket"><span class="link-bracket__b">[</span><span class="link-bracket__t">Смотреть</span><span class="link-bracket__a">→</span><span class="link-bracket__b">]</span></span></a></li><li class="strip__item"><a href="#zayavka" class="scard" data-theme="light">
+        <span class="scard__more link-bracket"><span class="link-bracket__b">[</span><span class="link-bracket__t">Смотреть</span><span class="link-bracket__a">→</span><span class="link-bracket__b">]</span></span></a></li><li class="strip__item"><a href="/vyveski-draft/produkciya/svetovye-koroba/" class="scard" data-theme="light">
         <span class="scard__n mono">03 / 07</span>
         <span class="scard__img"><picture><source type="image/webp" srcset="/vyveski-draft/assets/img/pdf/korob-na-kirpiche-render.webp 215w" sizes="100vw"><img src="/vyveski-draft/assets/img/pdf/korob-na-kirpiche-render.png" alt="Световые короба (лайтбоксы)" width="215" height="215" class="" loading="lazy" decoding="async"></picture></span>
         <span class="scard__title">Световые короба (лайтбоксы)</span>
         <span class="scard__kicker">Популярный вид наружной рекламы</span>
         <p class="price "><span class="price__from">от</span><span class="price__num">8 000</span><span class="price__cur">₽</span><span class="price__unit">/ м²</span></p>
-        <span class="scard__more link-bracket"><span class="link-bracket__b">[</span><span class="link-bracket__t">Смотреть</span><span class="link-bracket__a">→</span><span class="link-bracket__b">]</span></span></a></li><li class="strip__item"><a href="#zayavka" class="scard" data-theme="light">
+        <span class="scard__more link-bracket"><span class="link-bracket__b">[</span><span class="link-bracket__t">Смотреть</span><span class="link-bracket__a">→</span><span class="link-bracket__b">]</span></span></a></li><li class="strip__item"><a href="/vyveski-draft/produkciya/bukvy-iz-nerzhaveyushchej-stali/" class="scard" data-theme="light">
         <span class="scard__n mono">04 / 07</span>
         <span class="scard__img"><picture><source type="image/webp" srcset="/vyveski-draft/assets/img/pdf/nerzh-kolco-na-kirpiche-render.webp 215w" sizes="100vw"><img src="/vyveski-draft/assets/img/pdf/nerzh-kolco-na-kirpiche-render.png" alt="Вывески из нержавеющей стали" width="215" height="215" class="" loading="lazy" decoding="async"></picture></span>
         <span class="scard__title">Вывески из нержавеющей стали</span>
@@ -138,12 +224,13 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
       <p class="eyebrow"><span class="eyebrow__n">03</span><span class="eyebrow__sep">/</span><span>Расчёт</span></p>
       <h2 class="split h2" data-split="lines">Посчитайте вывеску <em>за минуту</em></h2>
       <p class="reveal">Ставка «от» × высота букв × их количество. Для коробов — за квадратный метр. Точную смету дадим после бесплатного замера.</p>
+      <a href="/vyveski-draft/kalkulyator/" class="link-bracket" ><span class="link-bracket__b">[</span><span class="link-bracket__t">Полный калькулятор</span><span class="link-bracket__a" aria-hidden="true">→</span><span class="link-bracket__b">]</span></a>
     </div>
     <form class="calc calc--mini" data-calc data-calc-key="svet">
       <label class="range"><span class="range__head"><span>Высота букв</span><output class="mono" data-out="h">50 см</output></span><input type="range" name="h" min="10" max="200" step="5" value="50" data-range="h"></label>
       <label class="range"><span class="range__head"><span>Количество букв</span><output class="mono" data-out="n">8</output></span><input type="range" name="n" min="1" max="30" step="1" value="8" data-range="n"></label>
       <p class="calc__result"><span class="mono">ориентировочно</span><strong><span class="calc__from">от</span> <span data-total>—</span> ₽</strong></p>
-      <a href="#zayavka" class="btn btn--primary btn--full magnetic" ><span class="btn__label">Бесплатный замер</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a href="/vyveski-draft/kontakty/#zayavka" class="btn btn--primary btn--full magnetic" ><span class="btn__label">Бесплатный замер</span><span class="btn__arrow" aria-hidden="true">→</span></a>
     </form>
   </div>
   <div class="showroom__glow" data-spotlight aria-hidden="true"></div>
@@ -152,11 +239,11 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
   <div class="container">
     <div class="section__head">
       <p class="eyebrow"><span class="eyebrow__n">04</span><span class="eyebrow__sep">/</span><span>Что дальше</span></p>
-      <h2 class="split h2" data-split="lines">Это черновик. В полной версии — <em>27 страниц</em></h2>
-      <p class="reveal draft-scope__lead">Первый экран, ритм секций, тёмные блоки и форма здесь уже настоящие. Ниже — разделы, которые разворачиваются в отдельные страницы с текстом, ценами и фотографиями.</p>
+      <h2 class="split h2" data-split="lines">Это черновик. Все <em>27 страниц</em> на месте, но пока без наполнения</h2>
+      <p class="reveal draft-scope__lead">Первый экран, ритм секций, тёмные блоки, меню и переходы здесь уже настоящие. По разделам можно ходить: каждая страница открывается, у каждой свой адрес и хлебные крошки — вместо содержания стоит одинаковая заглушка.</p>
     </div>
     <ul class="draft-scope__list" data-stagger>
-      <li class="draft-scope__item" style="--i:0"><span class="draft-scope__n mono">8 страниц</span><span class="draft-scope__t">Продукция: световые буквы, несветовые буквы, световые короба, нержавеющая сталь, короба с инкрустацией, крышные установки, стелы и пилоны — и общий каталог</span></li><li class="draft-scope__item" style="--i:1"><span class="draft-scope__n mono">10 страниц</span><span class="draft-scope__t">Услуги: наружная реклама, интерьерная реклама, широкоформатная печать, согласование рекламы, разработка концепций, консалтинг объектов, обслуживание вывесок, проектирование, монтаж рекламы</span></li><li class="draft-scope__item" style="--i:2"><span class="draft-scope__n mono">5 страниц</span><span class="draft-scope__t">О компании, почему мы, зачем вывеска, материалы, выполненные работы</span></li><li class="draft-scope__item" style="--i:3"><span class="draft-scope__n mono">3 страницы</span><span class="draft-scope__t">Калькулятор, контакты, политика конфиденциальности</span></li>
+      <li class="draft-scope__item" style="--i:0"><a href="/vyveski-draft/produkciya/" class="draft-scope__link" data-theme="light"><span class="draft-scope__n mono">8 страниц</span><span class="draft-scope__t">Продукция: световые буквы, несветовые буквы, световые короба, нержавеющая сталь, короба с инкрустацией, крышные установки, стелы и пилоны — и общий каталог</span><span class="draft-scope__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li><li class="draft-scope__item" style="--i:1"><a href="/vyveski-draft/uslugi/" class="draft-scope__link" data-theme="light"><span class="draft-scope__n mono">10 страниц</span><span class="draft-scope__t">Услуги: наружная реклама, интерьерная реклама, широкоформатная печать, согласование рекламы, разработка концепций, консалтинг объектов, обслуживание вывесок, проектирование, монтаж рекламы</span><span class="draft-scope__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li><li class="draft-scope__item" style="--i:2"><a href="/vyveski-draft/o-kompanii/" class="draft-scope__link" data-theme="light"><span class="draft-scope__n mono">5 страниц</span><span class="draft-scope__t">О компании, почему мы, зачем вывеска, материалы, выполненные работы</span><span class="draft-scope__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li><li class="draft-scope__item" style="--i:3"><a href="/vyveski-draft/kalkulyator/" class="draft-scope__link" data-theme="light"><span class="draft-scope__n mono">3 страницы</span><span class="draft-scope__t">Калькулятор, контакты, политика конфиденциальности</span><span class="draft-scope__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a></li>
     </ul>
   </div>
 </section>
@@ -184,7 +271,7 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
         <label class="field"><input type="tel" name="phone" autocomplete="tel" required inputmode="tel" placeholder=" "><span class="field__label">Телефон</span><span class="field__error">Нужен номер телефона</span></label>
       </div>
       <label class="field field--area"><textarea name="comment" rows="3" placeholder=" "></textarea><span class="field__label">Что за вывеска и где</span></label>
-      <label class="check"><input type="checkbox" name="consent" required><span class="check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span><span>Согласен на обработку персональных данных по политике</span><span class="field__error">Без согласия не можем принять заявку</span></label>
+      <label class="check"><input type="checkbox" name="consent" required><span class="check__box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span><span>Согласен на обработку персональных данных по <a href="/vyveski-draft/politika-konfidencialnosti/">политике</a></span><span class="field__error">Без согласия не можем принять заявку</span></label>
       <button type="submit" class="btn btn--primary btn--full magnetic"><span class="btn__label">Вызвать замерщика бесплатно</span><span class="btn__arrow" aria-hidden="true">→</span></button>
       <p class="form__error" role="alert" hidden>Не удалось отправить заявку. Позвоните нам: <a href="tel:+74957895098">+7 495 789 50 98</a> — ответим сразу.</p>
       <p class="form__success" role="status" aria-live="polite">Заявка у нас. Перезвоним в рабочее время — а работаем без выходных.</p>
@@ -193,22 +280,26 @@ try{if(sessionStorage.getItem('veles:transition')){document.documentElement.clas
 </section>
 </main>
 
-<footer class="footer footer--draft" id="footer">
+<footer class="footer" id="footer">
   <div class="container">
-    <div class="footer__top footer__top--draft">
+    <div class="footer__top">
       <div class="footer__brand">
         <svg class="logo logo--footer" viewBox="0 0 226.33 122.98" aria-hidden="true"><use href="#logo-full"/></svg>
         <p class="footer__tag">Рекламное объединение VELES — рекламно-производственная компания полного цикла. Собственное производство в Москве.</p>
       </div>
-      <div class="footer__contacts">
-        <h3 class="footer__h">Связаться</h3>
-        <a href="tel:+74957895098" class="footer__phone">+7 495 789 50 98</a><a href="tel:+74957895096" class="footer__phone">+7 495 789 50 96</a>
-        <a href="mailto:info@veless.ru" class="footer__mail">info@veless.ru</a>
-      </div>
+      <nav class="footer__nav" aria-label="Карта сайта">
+        <div><h3 class="footer__h">Продукция</h3><ul><li><a href="/vyveski-draft/produkciya/obemnye-svetovye-bukvy/">Объёмные световые буквы</a></li><li><a href="/vyveski-draft/produkciya/nesvetovye-bukvy/">Несветовые буквы и вывески</a></li><li><a href="/vyveski-draft/produkciya/svetovye-koroba/">Световые короба (лайтбоксы)</a></li><li><a href="/vyveski-draft/produkciya/bukvy-iz-nerzhaveyushchej-stali/">Вывески из нержавеющей стали</a></li><li><a href="/vyveski-draft/produkciya/kompozitnye-koroba-s-inkrustaciej/">Композитные короба с инкрустацией</a></li><li><a href="/vyveski-draft/produkciya/kryshnye-ustanovki/">Крышные установки</a></li><li><a href="/vyveski-draft/produkciya/stely-i-pilony/">Рекламные стелы и пилоны</a></li><li><a href="/vyveski-draft/produkciya/">Вся продукция</a></li></ul></div>
+        <div><h3 class="footer__h">Услуги</h3><ul><li><a href="/vyveski-draft/uslugi/naruzhnaya-reklama/">Наружная реклама</a></li><li><a href="/vyveski-draft/uslugi/interernaya-reklama/">Интерьерная реклама</a></li><li><a href="/vyveski-draft/uslugi/shirokoformatnaya-pechat/">Широкоформатная печать</a></li><li><a href="/vyveski-draft/uslugi/soglasovanie-reklamy/">Согласование рекламы</a></li><li><a href="/vyveski-draft/uslugi/razrabotka-koncepcij/">Разработка концепций</a></li><li><a href="/vyveski-draft/uslugi/konsalting-obektov/">Консалтинг объектов</a></li><li><a href="/vyveski-draft/uslugi/obsluzhivanie-vyvesok/">Обслуживание вывесок</a></li><li><a href="/vyveski-draft/uslugi/proektirovanie/">Проектирование</a></li><li><a href="/vyveski-draft/uslugi/montazh-reklamy/">Монтаж рекламы</a></li><li><a href="/vyveski-draft/uslugi/">Все услуги</a></li></ul></div>
+        <div><h3 class="footer__h">Компания</h3><ul><li><a href="/vyveski-draft/o-kompanii/">О компании</a></li><li><a href="/vyveski-draft/pochemu-my/">Почему работать с нами</a></li><li><a href="/vyveski-draft/zachem-vyveska/">Зачем инвестировать в вывеску</a></li><li><a href="/vyveski-draft/materialy/">Материалы</a></li><li><a href="/vyveski-draft/raboty/">Выполненные заказы</a></li><li><a href="/vyveski-draft/kalkulyator/">Калькулятор стоимости</a></li><li><a href="/vyveski-draft/kontakty/">Контакты</a></li><li><a href="/vyveski-draft/politika-konfidencialnosti/">Политика конфиденциальности</a></li></ul></div>
+        <div class="footer__contacts"><h3 class="footer__h">Связаться</h3>
+          <a href="tel:+74957895098" class="footer__phone">+7 495 789 50 98</a><a href="tel:+74957895096" class="footer__phone">+7 495 789 50 96</a>
+          <a href="mailto:info@veless.ru" class="footer__mail">info@veless.ru</a>
+        </div>
+      </nav>
     </div>
     <div class="footer__bottom mono">
       <span>© 2026 Рекламное объединение VELES</span>
-      <span>черновая версия макета</span>
+      <a href="/vyveski-draft/">veless.ru</a>
       <a href="#top" class="footer__up" data-to-top>Наверх ↑</a>
     </div>
   </div>
